@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>1xdv.lol</title>
+
+  <!-- Angel Wish Font (replace this with your own hosted font link if needed) -->
+  <link href="https://example.com/path-to-angel-wish-font.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --highlight: #7b61ff;
+      --text: #e0e0e3;
+      --soft-text: #8a8a95;
+      --card-bg: rgba(26,26,35,0.6);
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box }
+
+    html, body {
+      height:100%;
+      font-family: 'Angel Wish', cursive;
+      overflow:hidden;
+    }
+
+    body {
+      background: linear-gradient(-45deg, #1a1a23, #2e1a3a, #1a232e, #3a1a23);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .entry, .main {
+      position:absolute; inset:0;
+      display:flex; flex-direction:column;
+      align-items:center; justify-content:center;
+      transition: opacity .5s ease;
+    }
+
+    .entry {
+      background:#000; z-index:10;
+    }
+
+    .entry img {
+      width:240px; border-radius:12px; margin-bottom:1rem;
+    }
+
+    .entry button {
+      background:var(--highlight); color:#fff;
+      padding:.8rem 2rem; border:none; border-radius:8px;
+      cursor:pointer; font-size:1rem;
+      transition:background .3s;
+    }
+
+    .entry button:hover { background:#957aff }
+
+    .main {
+      opacity:0; pointer-events:none;
+    }
+
+    .main.active {
+      opacity:1; pointer-events:auto;
+    }
+
+    .video-bg {
+      position:absolute;
+      top:0; left:0;
+      width:100%; height:100%;
+      object-fit:cover;
+      z-index:0;
+      opacity:0.15;
+      pointer-events:none;
+    }
+
+    .container {
+      position: relative;
+      z-index:1;
+      background:var(--card-bg);
+      backdrop-filter: blur(10px);
+      border:1px solid rgba(255,255,255,0.1);
+      border-radius:16px; padding:2rem;
+      max-width:400px; width:90%; text-align:center;
+      box-shadow:0 8px 40px rgba(0,0,0,0.6);
+    }
+
+    .logo {
+      width:140px; border-radius:10px;
+      box-shadow:0 0 12px #7b61ff66; margin-bottom:1rem;
+    }
+
+    h1 {
+      color:var(--text);
+      font-size:1.8rem;
+      margin-bottom:.5rem;
+    }
+
+    p.subtitle {
+      color:var(--soft-text);
+      margin-bottom:1.5rem;
+    }
+
+    .links {
+      display:flex; flex-direction:column; gap:.75rem;
+    }
+
+    .link-btn {
+      background:#ffffff;
+      color:#000000;
+      padding:.85rem;
+      border:none;
+      border-radius:10px;
+      font-weight:600;
+      letter-spacing:.5px;
+      box-shadow:0 0 10px #ffffff50;
+      transition: all .2s;
+      text-decoration:none;
+    }
+
+    .link-btn:hover {
+      background:#f0f0f0;
+      box-shadow:0 0 20px #dddddd80;
+    }
+
+    footer {
+      margin-top:1.5rem;
+      color:var(--soft-text);
+      font-size:.85rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Entry Screen -->
+  <div class="entry" id="entryScreen">
+    <img src="https://i.ibb.co/dwfn85Hs/IMG-0377.webp" alt="1xdv logo">
+    <button onclick="enterSite()">click to enter</button>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main" id="mainContent">
+    <!-- Subtle Background Video -->
+    <video autoplay muted loop playsinline class="video-bg">
+      <source src="27706-365890968_small.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Foreground Container -->
+    <div class="container">
+      <img src="https://i.ibb.co/dwfn85Hs/IMG-0377.webp" alt="1xdv logo" class="logo">
+      <h1>@1xdv</h1>
+      <p class="subtitle">all my links in one spot</p>
+      <div class="links">
+        <a href="https://youtube.com/harmingnewgens" class="link-btn" target="_blank">YouTube</a>
+        <a href="https://twitter.com/harmingnewgens" class="link-btn" target="_blank">Twitter</a>
+        <a href="https://t.me/harmingnewgens" class="link-btn" target="_blank">Telegram</a>
+        <a href="https://tiktok.com/@1xdv" class="link-btn" target="_blank">TikTok</a>
+      </div>
+      <footer>© 2025 1xdv.lol</footer>
+    </div>
+  </div>
+
+  <script>
+    function enterSite() {
+      document.getElementById('entryScreen').style.display='none';
+      document.getElementById('mainContent').classList.add('active');
+      document.body.style.overflow='auto';
+    }
+  </script>
+</body>
+</html>
